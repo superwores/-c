@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<string.h>
+char str[1000],*p;
+int main()
+{
+    while(1)
+    {
+    	gets(str);
+    	p=strtok(str," ");
+		if(str[0]=='p') break;
+    	int zuo=0;
+    	int you=0;
+		while(*p!='#')
+		{
+//			printf("%c ",*p);
+			if(*p=='{') zuo++;
+			if(*p=='}') you++;
+			p=strtok(NULL," "); 	
+		}
+//		printf("%d %d\n",zuo,you);
+		if(zuo==you) printf("paired\n");
+		if(zuo!=you) printf("unpaired\n");	
+	}
+    
+    return 0;
+}
